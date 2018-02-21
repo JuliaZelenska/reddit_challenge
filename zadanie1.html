@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Zadanie 1</title>
+</head>
+<body>
+
+<div class="form">
+    <label>What is your name?
+        <input type="text" id="name">
+    </label>
+
+    <label>How old are you?
+        <input type="number" id="age">
+    </label>
+
+    <label>What is your login?
+        <input type="text" id="login">
+    </label>
+</div>
+
+<button type="submit" id="save">Save</button>
+
+<div>
+    <p id="result">tutaj</p>
+
+</div>
+
+<script>
+
+    function getUserData() {
+
+        name = document.getElementById("name").value;
+        age = document.getElementById("age").value;
+        login = document.getElementById("login").value;
+
+        return `your name is ${name},
+        your age is ${age},
+        your login is ${login}`
+
+    }
+
+    document.getElementById("save").onclick = (data) => {
+
+        console.log(getUserData());
+        document.getElementById("result").innerHTML = getUserData();
+
+    }
+
+
+</script>
+
+</body>
+</html>
