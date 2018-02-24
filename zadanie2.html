@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - Challenge Zadanie 1</title>
+</head>
+<body>
+
+<div>
+    <label>Od
+        <input type="number" id="floor">
+    </label>
+
+    <label>Do
+        <input type="number" id="ceiling">
+    </label>
+</div>
+
+
+<button type="button" id="start">Start</button>
+<button onclick="getResult('more')" type="button" id="more">Więcej</button>
+<button onclick="getResult('less')" type="button" id="less">Mniej</button>
+<button onclick="getResult('good')" type="button" id="good">Trafiony!</button>
+
+
+<script type="application/javascript">
+
+    floor = document.getElementById("floor").value;
+    ceiling = document.getElementById("ceiling").value;
+    number = 0;
+
+    document.getElementById("start").onclick = () => {
+        floor = parseInt(document.getElementById("floor").value);
+        ceiling = parseInt(document.getElementById("ceiling").value);
+        calculate()
+
+    }
+
+    if ((floor < 0 ) && (ceiling < floor)) {
+        alert("Błąd");
+    }
+
+    function calculate() {
+
+//        console.log("floor", floor, "ceeling", ceiling);
+
+        range = (ceiling + floor);
+        console.log(range);
+        number = (range / 2);
+        number = Math.round(number);
+        console.log(number);
+
+    }
+
+
+    function getResult(result) {
+
+        switch (result) {
+
+            case "more":
+                floor = number;
+                console.log(floor);
+
+//                floor = floor + number;
+                calculate();
+                break;
+
+            case "less":
+                ceiling = number;
+                calculate();
+                break;
+
+            case "good":
+                alert("Success");
+
+                break;
+        }
+
+    }
+
+</script>
+</body>
+</html>
